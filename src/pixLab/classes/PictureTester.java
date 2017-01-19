@@ -37,9 +37,20 @@ public class PictureTester
 	  bike.explore();
   }
   
+  public static void testMirrorDiagonal()
+  {
+	  Picture robot = new Picture("whiteFlower.jpg");
+	  
+	  robot.explore();
+	  robot.mirrorDiagonalUphill();
+	  robot.explore();
+  }
+  
   public static void testMirrowHorizontalBottomToTop()
   {
 	  Picture snowman = new Picture("snowman.jpg");
+	  
+	  snowman.explore();
 	  snowman.mirrorHorizontalBottomToTop();
 	  snowman.explore();
   }
@@ -48,9 +59,13 @@ public class PictureTester
   public static void testMirrorTemple()
   {
     Picture temple = new Picture("temple.jpg");
+   
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+    
+    
+    
   }
   
   /** Method to test the collage method */
@@ -86,10 +101,10 @@ public class PictureTester
     testMirrorVertical();
     testMirrorVerticalRightToLeft();
     testMirrowHorizontalBottomToTop();
-    //testMirrorTemple();
+    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();

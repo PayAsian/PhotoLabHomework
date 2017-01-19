@@ -35,11 +35,11 @@ public class IntArrayWorker
 	  
 	  int colum = 0;
 	
-	  for(int [] col : matrix)
+	  for(int col [] : matrix)
 	  {
 		  for (int item : col)
 		  {
-			 
+			colum++;
 		  }
 	  }
 	

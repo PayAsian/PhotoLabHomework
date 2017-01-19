@@ -12,7 +12,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  * SimplePicture and allows the student to add functionality to
  * the Picture class.  
  * 
- * @author Barbara Ericson ericson@cc.gatech.edu
+ * @author Peyton Trevino 
  */
 public class Picture extends SimplePicture 
 {
@@ -145,13 +145,75 @@ public class Picture extends SimplePicture
 	  Pixel bottomPixel = null;
 	  int height = pixels[0].length;
 	  
-	  for (int row = pixels.length - 1; row>= 0; row--)
+	  for (int row = pixels.length - 1; row >= 0; row--)
 	  {
 		  for (int col = height / 2 - 1; col >= 0; col-- )
 		  {
 			  bottomPixel = pixels[row][col];
 			  topPixel = pixels[row][height - col - 1];
 			  bottomPixel.setColor(topPixel.getColor());
+		  }
+	  }
+  }
+  
+  public void mirrorDiagonal()
+  {
+	  Pixel [] [] pictureMatrix = this.getPixels2D();
+	  Pixel topRight = null;
+	  Pixel bottomLeft = null;
+	  
+	  
+	  for(int row = 0; row < pictureMatrix.length - 1; row++)
+	  {
+		  for(int col = 0; col < pictureMatrix[0].length; col++)
+		  {
+			  if(row != col && row < pictureMatrix[0].length && col < pictureMatrix.length)
+			  {
+				  topRight = pictureMatrix[row][col];
+				  bottomLeft = pictureMatrix[col][row];
+				  
+				  bottomLeft.setColor(topRight.getColor());
+			  }
+		  }
+	  }
+			 
+  }
+  
+  public void mirrorDiagonalUphill()
+  {
+	  Pixel [][] pictureMatrix = this.getPixels2D();
+	  Pixel topLeft = null;
+	  Pixel bottomRight = null;
+	  int shortest = Math.min(pictureMatrix.length, pictureMatrix[0].length);
+	  
+	  for(int row = 0; row< shortest; row++)
+	  {
+		  for(int col = 0; col < shortest; col++)
+		  {
+			  if(row + col != shortest - 1)
+			  {
+				  topLeft = pictureMatrix[row][col];
+				  bottomRight = pictureMatrix[shortest - col - 1][shortest - row - 1];
+				  topLeft.setColor(bottomRight.getColor());
+			  }
+		  }
+	  }
+	  
+  }
+  
+  public void mirrorArms()
+  {
+	  int mirrorPoint = 156;
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  int count = 0;
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for()
+	  {
+		  for()
+		  {
+			  
 		  }
 	  }
   }
